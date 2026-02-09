@@ -1,18 +1,1 @@
-{
-  "metadata": {
-    "source_file": "...",
-    "transformation_date": "...",
-    "total_records": 1000,
-    "total_revenue": 322966.749,
-    "total_units_sold": 5510,
-    "price_categories": [...]
-  },
-  "summary": {
-    "best_selling_category": {...},
-    "least_selling_category": {...}
-  },
-  "category_breakdown": [...],
-  "top_10_best_selling_products": [...],
-  "top_10_least_selling_products": [...],
-  "all_transactions": [1000 records]
-}
+
