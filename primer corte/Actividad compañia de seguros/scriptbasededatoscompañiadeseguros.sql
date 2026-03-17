@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS companiaseguros;
 create database companiaseguros;
 use companiaseguros;
 
@@ -41,3 +42,25 @@ create table automovil_accidente(
 idAutomovilAccidente varchar (50) primary key,
 idAutomovilFK varchar (50) not null,
 idAccidenteFK varchar (50) not null);
+ 
+alter table seguros
+add constraint fk_seguro_compania
+foreign key (idCompaniaFK) references compania(idCompania);
+ 
+alter table seguros
+add constraint fk_seguro_automovil
+foreign key (idAutomovilFK) references automovil(idAutomovil);
+ 
+alter table automovil_accidente
+add constraint fk_autoAcc_automovil
+foreign key (idAutomovilFK) references automovil(idAutomovil);
+ 
+alter table automovil_accidente
+add constraint fk_autoAcc_accidente
+foreign key (idAccidenteFK) references accidente(idAccidente);
+
+RENAME TABLE automovil_accidente TO accidente_vial;
+
+ALTER TABLE accidente DROP COLUMN lugar;
+
+ALTER TABLE accidente_vial DROP FOREIGN KEY fk_autoAcc_accidente;
