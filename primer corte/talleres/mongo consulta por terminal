@@ -1,0 +1,104 @@
+use salinasCuervo
+switched to db salinasCuervo
+db.producto.drop()
+true
+const datos = [{ precio: 12000, cantidad: 2, categoria: "básica" },
+  { precio: 18000, cantidad: 1, categoria: "premium" },
+  { precio: 9500,  cantidad: 4, categoria: "económica" },
+  { precio: 22000, cantidad: 2, categoria: "especial" },
+  { precio: 15000, cantidad: 3, categoria: "premium" },
+  { precio: 8000,  cantidad: 5, categoria: "económica" },
+  { precio: 30000, cantidad: 1, categoria: "especial" },
+  { precio: 11000, cantidad: 2, categoria: "básica" },
+  { precio: 25000, cantidad: 2, categoria: "premium" },
+  { precio: 7000,  cantidad: 6, categoria: "económica" }
+]
+const datosConTotal = datos.map(d => ({...d, total: d.precio * d.cantidad}))
+db.producto.insertMany(datosConTotal)
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69f8f9e0479e739b487de623'),
+    '1': ObjectId('69f8f9e0479e739b487de624'),
+    '2': ObjectId('69f8f9e0479e739b487de625'),
+    '3': ObjectId('69f8f9e0479e739b487de626'),
+    '4': ObjectId('69f8f9e0479e739b487de627'),
+    '5': ObjectId('69f8f9e0479e739b487de628'),
+    '6': ObjectId('69f8f9e0479e739b487de629'),
+    '7': ObjectId('69f8f9e0479e739b487de62a'),
+    '8': ObjectId('69f8f9e0479e739b487de62b'),
+    '9': ObjectId('69f8f9e0479e739b487de62c')
+  }
+}
+db.producto.find().pretty()
+{
+  _id: ObjectId('69f8f9e0479e739b487de623'),
+  precio: 12000,
+  cantidad: 2,
+  categoria: 'básica',
+  total: 24000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de624'),
+  precio: 18000,
+  cantidad: 1,
+  categoria: 'premium',
+  total: 18000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de625'),
+  precio: 9500,
+  cantidad: 4,
+  categoria: 'económica',
+  total: 38000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de626'),
+  precio: 22000,
+  cantidad: 2,
+  categoria: 'especial',
+  total: 44000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de627'),
+  precio: 15000,
+  cantidad: 3,
+  categoria: 'premium',
+  total: 45000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de628'),
+  precio: 8000,
+  cantidad: 5,
+  categoria: 'económica',
+  total: 40000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de629'),
+  precio: 30000,
+  cantidad: 1,
+  categoria: 'especial',
+  total: 30000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de62a'),
+  precio: 11000,
+  cantidad: 2,
+  categoria: 'básica',
+  total: 22000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de62b'),
+  precio: 25000,
+  cantidad: 2,
+  categoria: 'premium',
+  total: 50000
+}
+{
+  _id: ObjectId('69f8f9e0479e739b487de62c'),
+  precio: 7000,
+  cantidad: 6,
+  categoria: 'económica',
+  total: 42000
+}
+db.producto.updateMany({},[{$set: {total: { $multiply:["$precio","$cantidad"]}}}])
