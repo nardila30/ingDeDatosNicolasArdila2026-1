@@ -1,0 +1,482 @@
+use rockband
+switched to db rockband
+db.createCollection("band")
+{ ok: 1 }
+db.band.insertOne({
+  name: "Bon Jovi",
+  country: "Estados Unidos de América",
+  url: "https://www.bonjovi.com",
+  album: [
+    {
+      title: "Bon Jovi",
+      dateCreated: new Date(1984, 07, 21),
+      songs: [
+        { title: "Runaway" },
+        { title: "She Don't Know Me" },
+        { title: "Shot Through the Heart" },
+        { title: "Love Lies" },
+        { title: "Burning for Love" }
+      ]
+    },
+    {
+      title: "Slippery When Wet",
+      dateCreated: new Date(1986, 7, 18),
+      songs: [
+        { title: "You Give Love a Bad Name" },
+        { title: "Livin on a Prayer" },
+        { title: "Social Disease" },
+        { title: "Wanted Dead or Alive" },
+        { title: "Wild in the Streets" }
+      ]
+    }
+  ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69fb99df9d654d9d0c7e8b2b')
+}
+db.band.insertOne({
+  name: "Guns N Roses",
+  country: "Estados Unidos de América",
+  url: "https://www.gunsnroses.com",
+  album: [
+    {
+      title: "Appetite for Destruction",
+      dateCreated: new Date(1987, 6, 21),
+      songs: [
+        { title: "Welcome to the Jungle" },
+        { title: "Its So Easy" },
+        { title: "Nightrain" },
+        { title: "Paradise City" },
+        { title: "Sweet Child O Mine" }
+      ]
+    },
+    {
+      title: "Use Your Illusion I",
+      dateCreated: new Date(1991, 8, 17),
+      songs: [
+        { title: "Right Next Door to Hell" },
+        { title: "Live and Let Die" },
+        { title: "November Rain" },
+        { title: "The Garden" },
+        { title: "Estranged" }
+      ]
+    }
+  ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69fb9a229d654d9d0c7e8b2c')
+}
+db.band.insertOne({
+  name: "Metallica",
+  country: "Estados Unidos de América",
+  url: "https://www.metallica.com",
+  album: [
+    {
+      title: "Master of Puppets",
+      dateCreated: new Date(1986, 2, 3),
+      songs: [
+        { title: "Battery" },
+        { title: "Master of Puppets" },
+        { title: "The Thing That Should Not Be" },
+        { title: "Disposable Heroes" },
+        { title: "Damage Inc" }
+      ]
+    },
+    {
+      title: "The Black Album",
+      dateCreated: new Date(1991, 7, 12),
+      songs: [
+        { title: "Enter Sandman" },
+        { title: "Sad but True" },
+        { title: "The Unforgiven" },
+        { title: "Nothing Else Matters" },
+        { title: "Wherever I May Roam" }]}]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69fb9a589d654d9d0c7e8b2d')
+}
+db.band.insertOne({
+  name: "ACDC",
+  country: "Australia",
+  url: "https://www.acdc.com",
+  album: [
+    {
+      title: "Highway to Hell",
+      dateCreated: new Date(1979, 6, 27),
+      songs: [
+        { title: "Highway to Hell" },
+        { title: "Girls Got Rhythm" },
+        { title: "Walk All Over You" },
+        { title: "Touch Too Much" },
+        { title: "Shot Down in Flames" }
+      ]
+    },
+    {
+      title: "Back in Black",
+      dateCreated: new Date(1980, 6, 25),
+      songs: [
+        { title: "Hells Bells" },
+        { title: "Shoot to Thrill" },
+        { title: "Back in Black" },
+        { title: "You Shook Me All Night Long" },
+        { title: "Rock and Roll Aint Noise Pollution" }
+      ]
+    }
+  ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69fb9aa29d654d9d0c7e8b2e')
+}
+db.band.insertOne({
+  name: "Queen",
+  country: "Reino Unido",
+  url: "https://www.queenonline.com",
+  album: [
+    {
+      title: "A Night at the Opera",
+      dateCreated: new Date(1975, 10, 21),
+      songs: [
+        { title: "Bohemian Rhapsody" },
+        { title: "You Are My Best Friend" },
+        { title: "Love of My Life" },
+        { title: "The Prophets Song" },
+        { title: "39" }
+      ]
+    },
+    {
+      title: "News of the World",
+      dateCreated: new Date(1977, 9, 28),
+      songs: [
+        { title: "We Will Rock You" },
+        { title: "We Are the Champions" },
+        { title: "Sheer Heart Attack" },
+        { title: "All Dead All Dead" },
+        { title: "Its Late" }
+      ]
+    }
+  ]
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('69fb9ab89d654d9d0c7e8b2f')
+}
+db.band.find().pretty()
+{
+  _id: ObjectId('69fb95334be5a02e6378044b'),
+  name: 'Bon Jovi',
+  country: 'Estados Unidos de América'
+}
+{
+  _id: ObjectId('69fb95ae4be5a02e6378044c'),
+  name: 'Bon Jovi',
+  country: 'Estados Unidos de América'
+}
+{
+  _id: ObjectId('69fb95ae4be5a02e6378044d'),
+  name: 'Guns & Roses',
+  country: 'Estados Unidos de América'
+}
+{
+  _id: ObjectId('69fb98ab4a035056d006d2ce'),
+  name: 'Bon Jovi',
+  country: 'Estados Unidos de América',
+  url: 'https://www.bonjovi.com',
+  album: [
+    {
+      title: 'Bon Jovi',
+      dateCreated: 1984-01-21T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Runaway'
+        },
+        {
+          title: "She Don't Know Me"
+        },
+        {
+          title: 'Shot Through the Heart'
+        },
+        {
+          title: 'Love Lies'
+        },
+        {
+          title: 'Burning for Love'
+        }
+      ]
+    },
+    {
+      title: 'Slippery When Wet',
+      dateCreated: 1986-08-18T05:00:00.000Z,
+      songs: [
+        {
+          title: 'You Give Love a Bad Name'
+        },
+        {
+          title: 'Livin on a Prayer'
+        },
+        {
+          title: 'Social Disease'
+        },
+        {
+          title: 'Wanted Dead or Alive'
+        },
+        {
+          title: 'Wild in the Streets'
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId('69fb98ed4a035056d006d2cf'),
+  name: 'Guns N Roses',
+  country: 'Estados Unidos de América',
+  url: 'https://www.gunsnroses.com',
+  album: [
+    {
+      title: 'Appetite for Destruction',
+      dateCreated: 1987-07-21T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Welcome to the Jungle'
+        },
+        {
+          title: 'Its So Easy'
+        },
+        {
+          title: 'Nightrain'
+        },
+        {
+          title: 'Paradise City'
+        },
+        {
+          title: 'Sweet Child O Mine'
+        }
+      ]
+    },
+    {
+      title: 'Use Your Illusion I',
+      dateCreated: 1991-09-17T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Right Next Door to Hell'
+        },
+        {
+          title: 'Live and Let Die'
+        },
+        {
+          title: 'November Rain'
+        },
+        {
+          title: 'The Garden'
+        },
+        {
+          title: 'Estranged'
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId('69fb99df9d654d9d0c7e8b2b'),
+  name: 'Bon Jovi',
+  country: 'Estados Unidos de América',
+  url: 'https://www.bonjovi.com',
+  album: [
+    {
+      title: 'Bon Jovi',
+      dateCreated: 1984-08-21T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Runaway'
+        },
+        {
+          title: "She Don't Know Me"
+        },
+        {
+          title: 'Shot Through the Heart'
+        },
+        {
+          title: 'Love Lies'
+        },
+        {
+          title: 'Burning for Love'
+        }
+      ]
+    },
+    {
+      title: 'Slippery When Wet',
+      dateCreated: 1986-08-18T05:00:00.000Z,
+      songs: [
+        {
+          title: 'You Give Love a Bad Name'
+        },
+        {
+          title: 'Livin on a Prayer'
+        },
+        {
+          title: 'Social Disease'
+        },
+        {
+          title: 'Wanted Dead or Alive'
+        },
+        {
+          title: 'Wild in the Streets'
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId('69fb9a229d654d9d0c7e8b2c'),
+  name: 'Guns N Roses',
+  country: 'Estados Unidos de América',
+  url: 'https://www.gunsnroses.com',
+  album: [
+    {
+      title: 'Appetite for Destruction',
+      dateCreated: 1987-07-21T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Welcome to the Jungle'
+        },
+        {
+          title: 'Its So Easy'
+        },
+        {
+          title: 'Nightrain'
+        },
+        {
+          title: 'Paradise City'
+        },
+        {
+          title: 'Sweet Child O Mine'
+        }
+      ]
+    },
+    {
+      title: 'Use Your Illusion I',
+      dateCreated: 1991-09-17T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Right Next Door to Hell'
+        },
+        {
+          title: 'Live and Let Die'
+        },
+        {
+          title: 'November Rain'
+        },
+        {
+          title: 'The Garden'
+        },
+        {
+          title: 'Estranged'
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId('69fb9a589d654d9d0c7e8b2d'),
+  name: 'Metallica',
+  country: 'Estados Unidos de América',
+  url: 'https://www.metallica.com',
+  album: [
+    {
+      title: 'Master of Puppets',
+      dateCreated: 1986-03-03T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Battery'
+        },
+        {
+          title: 'Master of Puppets'
+        },
+        {
+          title: 'The Thing That Should Not Be'
+        },
+        {
+          title: 'Disposable Heroes'
+        },
+        {
+          title: 'Damage Inc'
+        }
+      ]
+    },
+    {
+      title: 'The Black Album',
+      dateCreated: 1991-08-12T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Enter Sandman'
+        },
+        {
+          title: 'Sad but True'
+        },
+        {
+          title: 'The Unforgiven'
+        },
+        {
+          title: 'Nothing Else Matters'
+        },
+        {
+          title: 'Wherever I May Roam'
+        }
+      ]
+    }
+  ]
+}
+{
+  _id: ObjectId('69fb9aa29d654d9d0c7e8b2e'),
+  name: 'ACDC',
+  country: 'Australia',
+  url: 'https://www.acdc.com',
+  album: [
+    {
+      title: 'Highway to Hell',
+      dateCreated: 1979-07-27T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Highway to Hell'
+        },
+        {
+          title: 'Girls Got Rhythm'
+        },
+        {
+          title: 'Walk All Over You'
+        },
+        {
+          title: 'Touch Too Much'
+        },
+        {
+          title: 'Shot Down in Flames'
+        }
+      ]
+    },
+    {
+      title: 'Back in Black',
+      dateCreated: 1980-07-25T05:00:00.000Z,
+      songs: [
+        {
+          title: 'Hells Bells'
+        },
+        {
+          title: 'Shoot to Thrill'
+        },
+        {
+          title: 'Back in Black'
+        },
+        {
+          title: 'You Shook Me All Night Long'
+        },
+        {
+          title: 'Rock and Roll Aint Noise Pollution'
+        }
+      ]
+    }
+  ]
+}
