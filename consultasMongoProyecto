@@ -1,0 +1,356 @@
+use salinasDelCravo
+switched to db salinasDelCravo
+db
+salinasDelCravo
+show collections
+categoria
+inventario
+producto
+stock
+usuario
+db.producto.find({}, { nombre_sal_mineralizada: 1, unidad_medida: 1, _id: 0 })
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 12% — Bulto 50kg (paquetes de 1kg)',
+  unidad_medida: '1kg'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 12% — Bulto 50kg (paquetes de 5kg)',
+  unidad_medida: '5kg'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 12% — Bulto 40kg a Granel',
+  unidad_medida: 'granel'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 12% — Mochila 10kg',
+  unidad_medida: 'mochila'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 8% — Bulto 50kg (paquetes de 1kg)',
+  unidad_medida: '1kg'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 8% — Bulto 50kg (paquetes de 5kg)',
+  unidad_medida: '5kg'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 8% — Bulto 40kg a Granel',
+  unidad_medida: 'granel'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada 8% — Mochila 10kg',
+  unidad_medida: 'mochila'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada Ceba 4% — Bulto 50kg (paquetes de 1kg)',
+  unidad_medida: '1kg'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada Ceba 4% — Bulto 50kg (paquetes de 5kg)',
+  unidad_medida: '5kg'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada Ceba 4% — Bulto 40kg a Granel',
+  unidad_medida: 'granel'
+}
+{
+  nombre_sal_mineralizada: 'Sal Mineralizada Ceba 4% — Mochila 10kg',
+  unidad_medida: 'mochila'
+}
+db.usuario.find({ rol: "VENDEDOR" })
+{
+  _id: ObjectId('69fb7b43c8799f9e7b320496'),
+  id_usuario: 3,
+  nombre_completo: 'Andrés Felipe Morales Cruz',
+  username: 'afmorales',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b320497'),
+  id_usuario: 4,
+  nombre_completo: 'Sandra Milena Díaz Torres',
+  username: 'smdiaz',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b320498'),
+  id_usuario: 5,
+  nombre_completo: 'Juan Pablo Herrera López',
+  username: 'jpherrera',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b320499'),
+  id_usuario: 6,
+  nombre_completo: 'María Camila Ospina Ruiz',
+  username: 'mcospina',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b32049a'),
+  id_usuario: 7,
+  nombre_completo: 'Diego Alejandro Cárdenas Vega',
+  username: 'dacardenas',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b32049b'),
+  id_usuario: 8,
+  nombre_completo: 'Claudia Patricia Niño Sosa',
+  username: 'cpnino',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b32049c'),
+  id_usuario: 9,
+  nombre_completo: 'Ricardo Enrique Forero Muñoz',
+  username: 'reforero',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b32049d'),
+  id_usuario: 10,
+  nombre_completo: 'Paola Andrea Castillo Bermúdez',
+  username: 'pacastillo',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b32049e'),
+  id_usuario: 11,
+  nombre_completo: 'Hernán Darío Gómez Arenas',
+  username: 'hdgomez',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b32049f'),
+  id_usuario: 12,
+  nombre_completo: 'Natalia Sofía Pedraza Cely',
+  username: 'nspedraza',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a0'),
+  id_usuario: 13,
+  nombre_completo: 'Gustavo Adolfo Ríos Parra',
+  username: 'garios',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a1'),
+  id_usuario: 14,
+  nombre_completo: 'Viviana Marcela Triana Huertas',
+  username: 'vmtriana',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a2'),
+  id_usuario: 15,
+  nombre_completo: 'Édgar Humberto Salinas Bolaños',
+  username: 'ehsalinas',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a3'),
+  id_usuario: 16,
+  nombre_completo: 'Adriana Lucía Ramírez Peña',
+  username: 'alramirez',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a4'),
+  id_usuario: 17,
+  nombre_completo: 'Fabio Ernesto Camacho Uribe',
+  username: 'fecamacho',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a5'),
+  id_usuario: 18,
+  nombre_completo: 'Olga Beatriz Lozano Córdoba',
+  username: 'oblozano',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a6'),
+  id_usuario: 19,
+  nombre_completo: 'Mauricio Iván Pineda Acevedo',
+  username: 'mipineda',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a7'),
+  id_usuario: 20,
+  nombre_completo: 'Yolanda Esperanza Cruz Varón',
+  username: 'yecruz',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a8'),
+  id_usuario: 21,
+  nombre_completo: 'Jhon Fredy Álvarez Rojas',
+  username: 'jfalvarez',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  _id: ObjectId('69fb7b43c8799f9e7b3204a9'),
+  id_usuario: 22,
+  nombre_completo: 'Catalina Isabel Roa Méndez',
+  username: 'ciroa',
+  password_hash: 'aa9a86b28cdbbfd96e83ed085ec5443239d1c1a1ee3e23a40a979cc8aa0a9e49',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+Type "it" for more
+db.usuario.find({ rol: { $exists: true } }, { _id: 0, nombre_completo: 1, username: 1, rol: 1, estado_activo: 1 })
+{
+  nombre_completo: 'Carlos Andrés Rondón Suárez',
+  username: 'carondons',
+  estado_activo: 1,
+  rol: 'ADMIN'
+}
+{
+  nombre_completo: 'Luz Marina Vargas Pinto',
+  username: 'lmvargasp',
+  estado_activo: 1,
+  rol: 'ADMIN'
+}
+{
+  nombre_completo: 'Andrés Felipe Morales Cruz',
+  username: 'afmorales',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Sandra Milena Díaz Torres',
+  username: 'smdiaz',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Juan Pablo Herrera López',
+  username: 'jpherrera',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'María Camila Ospina Ruiz',
+  username: 'mcospina',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Diego Alejandro Cárdenas Vega',
+  username: 'dacardenas',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Claudia Patricia Niño Sosa',
+  username: 'cpnino',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Ricardo Enrique Forero Muñoz',
+  username: 'reforero',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Paola Andrea Castillo Bermúdez',
+  username: 'pacastillo',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Hernán Darío Gómez Arenas',
+  username: 'hdgomez',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Natalia Sofía Pedraza Cely',
+  username: 'nspedraza',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Gustavo Adolfo Ríos Parra',
+  username: 'garios',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Viviana Marcela Triana Huertas',
+  username: 'vmtriana',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Édgar Humberto Salinas Bolaños',
+  username: 'ehsalinas',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Adriana Lucía Ramírez Peña',
+  username: 'alramirez',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Fabio Ernesto Camacho Uribe',
+  username: 'fecamacho',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Olga Beatriz Lozano Córdoba',
+  username: 'oblozano',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
+{
+  nombre_completo: 'Mauricio Iván Pineda Acevedo',
+  username: 'mipineda',
+  estado_activo: 1,
+  rol: 'VENDEDOR'
+}
