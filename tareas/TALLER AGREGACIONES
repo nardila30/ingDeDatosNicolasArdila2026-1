@@ -1,0 +1,147 @@
+use runningapp
+
+db.createCollection("corredores")
+
+db.corredores.insertMany([
+  { nombre: "Juan",    apellido: "Pérez",      mes: 1, minutos: 95,  kilometros: 12.5, aficiones: ["ciclismo", "senderismo"] },
+  { nombre: "Juan",    apellido: "Pérez",      mes: 2, minutos: 110, kilometros: 14.0, aficiones: ["ciclismo", "senderismo"] },
+  { nombre: "Juan",    apellido: "Pérez",      mes: 3, minutos: 80,  kilometros: 10.2, aficiones: ["ciclismo", "senderismo"] },
+  { nombre: "Juan",    apellido: "Pérez",      mes: 4, minutos: 130, kilometros: 18.0, aficiones: ["ciclismo", "senderismo"] },
+  { nombre: "María",   apellido: "García",     mes: 1, minutos: 60,  kilometros: 6.8,  aficiones: ["yoga", "natación"] },
+  { nombre: "María",   apellido: "García",     mes: 2, minutos: 75,  kilometros: 8.5,  aficiones: ["yoga", "natación"] },
+  { nombre: "María",   apellido: "García",     mes: 3, minutos: 50,  kilometros: 5.2,  aficiones: ["yoga", "natación"] },
+  { nombre: "María",   apellido: "García",     mes: 4, minutos: 90,  kilometros: 9.0,  aficiones: ["yoga", "natación"] },
+  { nombre: "Carlos",  apellido: "López",      mes: 1, minutos: 120, kilometros: 20.0, aficiones: ["fútbol", "ciclismo", "escalada"] },
+  { nombre: "Carlos",  apellido: "López",      mes: 2, minutos: 100, kilometros: 16.5, aficiones: ["fútbol", "ciclismo", "escalada"] },
+  { nombre: "Carlos",  apellido: "López",      mes: 3, minutos: 140, kilometros: 22.3, aficiones: ["fútbol", "ciclismo", "escalada"] },
+  { nombre: "Carlos",  apellido: "López",      mes: 4, minutos: 115, kilometros: 19.0, aficiones: ["fútbol", "ciclismo", "escalada"] },
+  { nombre: "Ana",     apellido: "Martínez",   mes: 1, minutos: 45,  kilometros: 4.5,  aficiones: ["senderismo", "escalada"] },
+  { nombre: "Ana",     apellido: "Martínez",   mes: 2, minutos: 55,  kilometros: 5.8,  aficiones: ["senderismo", "escalada"] },
+  { nombre: "Ana",     apellido: "Martínez",   mes: 3, minutos: 40,  kilometros: 3.9,  aficiones: ["senderismo", "escalada"] },
+  { nombre: "Ana",     apellido: "Martínez",   mes: 4, minutos: 70,  kilometros: 7.2,  aficiones: ["senderismo", "escalada"] },
+  { nombre: "Luis",    apellido: "Rodríguez",  mes: 1, minutos: 85,  kilometros: 11.0, aficiones: ["natación", "fútbol"] },
+  { nombre: "Luis",    apellido: "Rodríguez",  mes: 2, minutos: 95,  kilometros: 13.5, aficiones: ["natación", "fútbol"] },
+  { nombre: "Luis",    apellido: "Rodríguez",  mes: 3, minutos: 75,  kilometros: 9.8,  aficiones: ["natación", "fútbol"] },
+  { nombre: "Luis",    apellido: "Rodríguez",  mes: 4, minutos: 105, kilometros: 15.0, aficiones: ["natación", "fútbol"] }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: { $concat: ["$nombre", " ", "$apellido"] },
+      "total minutos": { $sum: "$minutos" },
+      "total kilometros": { $sum: "$kilometros" }
+    }
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: { $concat: ["$nombre", " ", "$apellido"] },
+      "promedio minutos mensuales": { $avg: "$minutos" }
+    }
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: { $concat: ["$nombre", " ", "$apellido"] },
+      "promedio km mensuales": { $avg: "$kilometros" }
+    }
+  },
+  {
+    $match: { "promedio km mensuales": { $gt: 5 } }
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: {
+        corredor: { $concat: ["$nombre", " ", "$apellido"] },
+        mes: "$mes"
+      },
+      "total km": { $sum: "$kilometros" }
+    }
+  },
+  {
+    $sort: { "_id.mes": 1 }
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: { $concat: ["$nombre", " ", "$apellido"] },
+      "distancias km": { $addToSet: "$kilometros" }
+    }
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $unwind: "$aficiones"
+  },
+  {
+    $group: {
+      _id: "$aficiones",
+      "total corredores": { $sum: 1 }
+    }
+  },
+  {
+    $sort: { "total corredores": -1 }
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: { $concat: ["$nombre", " ", "$apellido"] },
+      "total km": { $sum: "$kilometros" }
+    }
+  },
+  {
+    $sort: { "total km": -1 }
+  },
+  {
+    $limit: 1
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: "$mes",
+      "promedio km": { $avg: "$kilometros" }
+    }
+  },
+  {
+    $sort: { _id: 1 }
+  }
+])
+
+
+db.corredores.aggregate([
+  {
+    $group: {
+      _id: { $concat: ["$nombre", " ", "$apellido"] },
+      "total km": { $sum: "$kilometros" }
+    }
+  },
+  {
+    $match: { "total km": { $gt: 40 } }
+  },
+  {
+    $sort: { "total km": -1 }
+  }
+])
