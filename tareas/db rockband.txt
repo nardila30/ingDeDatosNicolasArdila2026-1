@@ -480,3 +480,15 @@ db.band.find().pretty()
     }
   ]
 }
+
+db.band.find().pretty()
+
+db.band.updateOne(
+  { name: "Metallica" },
+  { $unset: { "album.0.dateCreated": "" } }
+)
+
+db.band.updateOne(
+  { "album.title": "Back in Black" },
+  { $unset: { "album.1.songs": 1 } }
+)
